@@ -21,6 +21,33 @@
             <li>ming</li>
         </ol>
         <a href="https://www.chs.nihon-u.ac.jp/">日本大学文理学部ホームページ</a>
+        class Ball {
+  int x = 100, y = 100, size = 50;
+  void display() {
+    ellipse(x, y, size, size);
+  }
+  
+  void move(int step) {
+    if(x + size/2 >= width || x -size/2 <= 0) {
+      step *= -1;
+    }
+    x += step;
+  }
+}
+
+Ball b;
+
+void setup() {
+  size(200, 200);
+  b = new Ball();
+}
+
+void draw() {
+  background(255);
+  int step = 5;
+  b.move(step);
+  b.display();
+}
         <script src="./scripts/main.js" type="text/javascript"></script>
     </body>
 </html>
